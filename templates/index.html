@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Recommender</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <div class="search" id = "search">
-            <span class="search-icon material-symbols-outlined unselectable" id = "search-icon"draggable = "false">search</span>            
-            <input class = "search-input" type="text" name="" id="search-input" placeholder="Enter a song" autocomplete="off">
+
+    
+        <div class="search">
+            <span class="search-icon material-symbols-outlined unselectable" id = "search-icon"draggable = "false">search</span>
+            <form action = "/recommend" method = "post"> 
+            <input class = "search-input unselectable" type="text" placeholder="Enter a song" autocomplete="off" name = "song">
+            </form>
         </div>
-    </form>
+
+
 </div>
 </html>
 </body>
